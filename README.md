@@ -43,3 +43,8 @@ job-application-tracker/
 │
 ├── .gitignore
 └── README.md
+## Screenshots
+
+### Dashboard
+
+![Job Application Tracker Dashboard](./screenshots/dashboard.PNG)
