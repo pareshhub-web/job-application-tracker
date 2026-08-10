@@ -6,11 +6,18 @@
   box-sizing: border-box;
 }
 
+html,
 body {
   margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
   font-family: Arial, Helvetica, sans-serif;
   background: #f4f7fb;
   color: #172554;
+  overflow-x: hidden;
 }
 
 button,
@@ -145,6 +152,7 @@ textarea {
   justify-content: center;
   align-items: center;
   font-size: 22px;
+  flex-shrink: 0;
 }
 
 .total-icon {
@@ -398,6 +406,7 @@ textarea {
 
 .search-box span {
   font-size: 18px;
+  flex-shrink: 0;
 }
 
 .search-box input {
@@ -415,6 +424,7 @@ textarea {
   background: white;
   outline: none;
   color: #334155;
+  min-width: 0;
 }
 
 /* =========================
@@ -450,6 +460,7 @@ textarea {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
   margin-bottom: 18px;
 }
 
@@ -464,6 +475,7 @@ textarea {
   align-items: center;
   font-weight: 700;
   font-size: 17px;
+  flex-shrink: 0;
 }
 
 /* =========================
@@ -475,6 +487,7 @@ textarea {
   border-radius: 20px;
   font-size: 12px;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .status-badge.applied {
@@ -501,16 +514,22 @@ textarea {
    JOB INFO
 ========================= */
 
+.job-info {
+  min-width: 0;
+}
+
 .job-info h3 {
   margin: 0 0 7px;
   color: #172554;
   font-size: 19px;
+  overflow-wrap: anywhere;
 }
 
 .job-info > p {
   margin: 0 0 12px;
   color: #64748b;
   font-size: 15px;
+  overflow-wrap: anywhere;
 }
 
 .job-location,
@@ -527,10 +546,12 @@ textarea {
   padding: 8px;
   border-radius: 7px;
   line-height: 1.4;
+  overflow-wrap: anywhere;
 }
 
 .job-link {
   margin-top: 12px;
+  overflow-wrap: anywhere;
 }
 
 .job-link a {
@@ -538,6 +559,7 @@ textarea {
   font-size: 13px;
   font-weight: 600;
   text-decoration: none;
+  overflow-wrap: anywhere;
 }
 
 .job-link a:hover {
@@ -597,7 +619,7 @@ textarea {
 }
 
 /* =========================
-   RESPONSIVE - TABLET
+   TABLET
 ========================= */
 
 @media (max-width: 1000px) {
@@ -623,252 +645,24 @@ textarea {
 }
 
 /* =========================
-   RESPONSIVE - MOBILE
-========================= */
-
-@media (max-width: 700px) {
-  .app {
-    padding: 15px 10px 40px;
-  }
-
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 18px;
-    padding: 22px;
-  }
-
-  .header h1 {
-    font-size: 24px;
-  }
-
-  .total-card {
-    width: 100%;
-  }
-
-  .stats-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .analytics-card,
-  .form-card,
-  .applications-section {
-    padding: 20px;
-  }
-
-  .analytics-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .job-form {
-    grid-template-columns: 1fr;
-  }
-
-  .notes-group {
-    grid-column: span 1;
-  }
-
-  .form-buttons {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .primary-btn,
-  .cancel-btn {
-    width: 100%;
-  }
-
-  .applications-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .filters {
-    grid-template-columns: 1fr;
-  }
-
-  .jobs-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* =========================
-   SMALL MOBILE
-========================= */
-
-@media (max-width: 450px) {
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .stat-card {
-    padding: 16px;
-  }
-
-  .job-actions {
-    grid-template-columns: 1fr;
-  }
-}
-/* =========================
-   MOBILE RESPONSIVE DESIGN
+   MOBILE
 ========================= */
 
 @media (max-width: 600px) {
-
-  .container {
-    width: 100%;
-    padding: 12px;
-  }
-
-  /* Header */
-  .header {
-    flex-direction: column;
-    text-align: center;
-    gap: 15px;
-    padding: 20px 15px;
-  }
-
-  .header h1 {
-    font-size: 24px;
-  }
-
-  .header p {
-    font-size: 13px;
-  }
-
-  .total-card {
-    width: 100%;
-  }
-
-  /* Statistics */
-  .stats-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-
-  .stat-card {
-    padding: 15px 10px;
-  }
-
-  .stat-card span {
-    font-size: 12px;
-  }
-
-  .stat-card strong {
-    font-size: 20px;
-  }
-
-  /* Analytics */
-  .analytics-card {
-    padding: 20px 12px;
-  }
-
-  .analytics-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-  }
-
-  .analytics-item {
-    padding: 15px 8px;
-  }
-
-  .analytics-item span {
-    font-size: 12px;
-  }
-
-  .analytics-item strong {
-    font-size: 20px;
-  }
-
-  /* Form */
-  .form-card {
-    padding: 20px 15px;
-  }
-
-  .job-form {
-    grid-template-columns: 1fr;
-  }
-
-  .notes-group {
-    grid-column: auto;
-  }
-
-  .form-buttons {
-    flex-direction: column;
-  }
-
-  .primary-btn,
-  .cancel-btn {
-    width: 100%;
-  }
-
-  /* Applications */
-  .applications-section {
-    padding: 20px 12px;
-  }
-
-  .applications-header {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  /* Search + filters */
-  .filters {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .search-box,
-  .filter-select {
-    width: 100%;
-  }
-
-  /* Job cards */
-  .jobs-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .job-card {
-    width: 100%;
-  }
-
-  .job-actions {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-
-  .edit-btn,
-  .delete-btn {
-    width: 100%;
-  }
-}
-/* =========================
-   MOBILE RESPONSIVE FIX
-   ========================= */
-
-@media (max-width: 600px) {
-
-  * {
-    box-sizing: border-box;
-  }
-
   body {
-    margin: 0;
     overflow-x: hidden;
   }
 
   .app {
     width: 100%;
+    padding: 12px 8px 35px;
     overflow-x: hidden;
   }
 
   .container {
     width: 100%;
     max-width: 100%;
-    padding: 12px;
+    padding: 0;
     margin: 0;
   }
 
@@ -876,21 +670,21 @@ textarea {
 
   .header {
     width: 100%;
-    display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 18px;
-    padding: 24px 16px;
+    gap: 16px;
+    padding: 22px 15px;
   }
 
   .header h1 {
-    font-size: 28px;
+    font-size: 24px;
     line-height: 1.2;
   }
 
   .header p {
-    font-size: 14px;
+    font-size: 13px;
+    line-height: 1.5;
   }
 
   .total-card {
@@ -898,31 +692,33 @@ textarea {
     max-width: 180px;
   }
 
-  /* STATS */
+  /* STATISTICS */
 
   .stats-grid {
     width: 100%;
-    display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
   }
 
   .stat-card {
-    width: 100%;
     min-width: 0;
-    padding: 16px 10px;
-  }
-
-  .stat-card span {
-    font-size: 12px;
-  }
-
-  .stat-card strong {
-    font-size: 20px;
+    padding: 15px 10px;
+    gap: 10px;
   }
 
   .stat-icon {
-    font-size: 20px;
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    font-size: 18px;
+  }
+
+  .stat-card span {
+    font-size: 11px;
+  }
+
+  .stat-card strong {
+    font-size: 19px;
   }
 
   /* ANALYTICS */
@@ -933,15 +729,25 @@ textarea {
   }
 
   .analytics-grid {
-    width: 100%;
-    display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px 10px;
+    gap: 12px;
   }
 
   .analytics-item {
     min-width: 0;
-    text-align: center;
+    padding: 15px 8px;
+  }
+
+  .analytics-item > div {
+    font-size: 23px;
+  }
+
+  .analytics-item span {
+    font-size: 11px;
+  }
+
+  .analytics-item strong {
+    font-size: 19px;
   }
 
   /* FORM */
@@ -953,9 +759,12 @@ textarea {
 
   .job-form {
     width: 100%;
-    display: grid;
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+
+  .notes-group {
+    grid-column: auto;
   }
 
   .input-group {
@@ -970,13 +779,8 @@ textarea {
     max-width: 100%;
   }
 
-  .notes-group {
-    grid-column: auto;
-  }
-
   .form-buttons {
     width: 100%;
-    display: flex;
     flex-direction: column;
     gap: 10px;
   }
@@ -990,41 +794,38 @@ textarea {
 
   .applications-section {
     width: 100%;
+    padding: 20px 12px;
   }
 
   .applications-header {
     width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
   }
 
   /* FILTERS */
 
   .filters {
     width: 100%;
-    display: grid;
     grid-template-columns: 1fr;
     gap: 10px;
   }
 
-  .search-box {
-    width: 100%;
-  }
-
-  .search-box input {
-    width: 100%;
-  }
-
+  .search-box,
   .filter-select {
     width: 100%;
   }
 
-  /* JOB CARDS */
+  /* JOB GRID */
 
   .jobs-grid {
     width: 100%;
-    display: grid;
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 15px;
   }
+
+  /* JOB CARD */
 
   .job-card {
     width: 100%;
@@ -1036,14 +837,38 @@ textarea {
     overflow-wrap: anywhere;
   }
 
+  .job-info h3 {
+    font-size: 18px;
+  }
+
   .job-actions {
     width: 100%;
-    display: flex;
+    grid-template-columns: 1fr 1fr;
     gap: 8px;
   }
 
-  .job-actions button {
-    flex: 1;
+  .edit-btn,
+  .delete-btn {
+    width: 100%;
+    padding: 10px 8px;
+  }
+}
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
+  .stats-grid,
+  .analytics-grid {
+    grid-template-columns: 1fr;
   }
 
+  .job-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .header h1 {
+    font-size: 22px;
+  }
 }
